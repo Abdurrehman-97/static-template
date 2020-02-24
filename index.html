@@ -1,12 +1,459 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>PortfolioV1</title>
+    <link
+      rel="stylesheet"
+      href="https: //maxcdn.bootstrapcdn.com/
+    bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/
+    jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/
+    popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/
+    bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="bootstrap.css" rel="stylesheet" />
   </head>
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      font-family: "Poppins", sans-serif;
+      color: #222;
+    }
+    .navbar {
+      padding: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .navbar-nav li {
+      padding-right: 20px;
+    }
+    .nav-link {
+      font-size: 1.1em;
+    }
+    .carousel-inner img {
+      width: 100%;
+      height: 100%;
+    }
+    .carousel-caption {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgb(253, 245, 245);
+    }
+    .padding {
+      padding-bottom: 2rem;
+    }
+    .technologies hr {
+      border-top: 2px solid #b4b4b4;
+      width: 80%;
+      margin-top: 0.3rem;
+      margin-bottom: 1rem;
+    }
+    .welcome {
+      width: 75%;
+      margin: 0 auto;
+      padding-top: 2rem;
+    }
+    .welcome hr {
+      border-top: 2px solid #b4b4b4;
+      width: 95%;
+      margin-top: 0.3rem;
+      margin-bottom: 1rem;
+    }
+    .fa-code {
+      color: #e54d26;
+    }
+    .fa-bold {
+      color: #563d7c;
+    }
+    .fa-css3 {
+      color: #2163af;
+    }
+    .fa-code,
+    .fa-bold,
+    .fa-css3 {
+      font-size: 4em;
+      margin: 1rem;
+    }
+    .social a {
+      font-size: 4.5em;
+      padding: 3rem;
+    }
+    .fa-facebook {
+      color: #3b5998;
+    }
+    .fa-twitter {
+      color: #00aced;
+    }
+    .fa-instagram {
+      color: #517fa4;
+    }
+    .fa-youtube {
+      color: #bb0000;
+    }
+    .fa-snapchat {
+      color: #ffc107;
+    }
+    .fa-facebook:hover,
+    .fa-twitter:hover,
+    .fa-youtube:hover,
+    .fa-instagram:hover,
+    .fa-snapchat:hover,
+    .fa-linkedin:hover {
+      color: #d5d5d5;
+    }
+    footer {
+      background-color: #3f3f3f;
+      color: #d5d5d5;
+      width: 100%;
+      padding-top: 2rem;
+    }
+    hr.light {
+      border-top: 1px solid #d5d5d5;
+      width: 75%;
+      margin-top: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    hr.light-100 {
+      border-top: 1px solid #d5d5d5;
+      width: 100%;
+      margin-top: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    figure {
+      position: relative;
+      width: 100%;
+      height: 60%;
+      margin: 0;
+    }
+    .fixed-wrap {
+      clip: rect(0, auto, auto, 0);
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+      will-change: transform;
+    }
+    a {
+      text-decoration-color: #6c757d;
+    }
+    @media (max-width: 576px) {
+      .icon {
+        width: 7%;
+      }
+      a {
+        width: 33.3%;
+      }
+      img {
+        width: 50%;
+      }
+      .WorkImg {
+        width: 50%;
+      }
+      .card {
+        padding-bottom: 2rem;
+      }
+      .carousel-caption {
+        top: 45%;
+      }
+      .carousel-indicators {
+        display: none;
+      }
+      .display-4 {
+        font-size: 160%;
+      }
+      .social a {
+        font-size: 2em;
+        padding: 0.7rem;
+      }
+      footer {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .icon {
+        width: 7%;
+      }
+      a {
+        width: 33.3%;
+      }
+      img {
+        width: 75%;
+      }
+      .WorkImg {
+        width: 50%;
+      }
+      .carousel-caption {
+        top: 50%;
+      }
+      .display-4 {
+        font-size: 200%;
+      }
+      .social a {
+        font-size: 2.5em;
+        padding: 1.2rem;
+      }
+      footer {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .icon {
+        width: 7%;
+      }
+      img {
+        width: 75%;
+      }
+      .carousel-inner {
+        text-align: center;
+      }
+      .WorkImg {
+        width: 75%;
+      }
+      .social a {
+        font-size: 4em;
+        padding: 2rem;
+      }
+      footer {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .icon {
+        width: 7%;
+      }
+      img {
+        width: 75%;
+      }
+      .carousel-inner {
+        text-align: center;
+      }
+      .WorkImg {
+        width: 75%;
+      }
+      footer {
+        width: 100%;
+      }
+    }
+  </style>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class="icon" src="icon.png"/></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- IntroImage -->
+    <div id="slides" class="carousel slide" data-ride="carousel">
+      <ul class="carousel-indicators">
+        <li data-target="#slides" data-slide-to="0" class="active"></li>
+        <li data-target="#slides" data-slide-to="1"></li>
+        <li data-target="#slides" data-slide-to="2"></li>
+      </ul>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="pic2.jpg" />
+          <div class="carousel-caption">
+            <h1 class="display-4">Hi! I'm Abdurrehman</h1>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="pic1.jpg" />
+        </div>
+        <div class="carousel-item">
+          <img src="pic2.jpg" />
+        </div>
+      </div>
+    </div>
+    <!-- Welcome section -->
+    <div class="container-fluid padding">
+      <div class="row welcome text-center">
+        <div class="col-12">
+          <h1 class="display-5mm">What Can I do?</h1>
+        </div>
+        <hr />
+        <div class="col-12">
+          <p class="lead">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
+      </div>
+      <hr class="my-3" />
+    </div>
+
+    <!-- technologies-->
+    <div class="container-fluid padding">
+      <div class="row technologies text-center padding">
+        <div class="col-12">
+          <h1 class="display-5mm">Technologies...</h1>
+        </div>
+        <hr class="my-3" />
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <i class="fas fa-code"></i>
+          <h3>HTML5</h3>
+          <p>Comfortable with the latest version of HTML</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <i class="fas fa-bold"></i>
+          <h3>BOOTSTRAP</h3>
+          <p>Static website built with Bootstrap4</p>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <i class="fab fa-css3"></i>
+          <h3>CSS3</h3>
+          <p>Used CSS3 for styling</p>
+        </div>
+      </div>
+      <hr class="my-3" />
+    </div>
+    <!-- My WorkV1 -->
+    <!-- <div class="container-fluid padding">
+      <div class="row padding">
+        <div class="col-md-12 col-lg-6">
+          <h2>My Work V1.....</h2>
+          <p>Latest project description</p>
+        </div>
+        <div class="col-lg-6">
+          <img class="WorkImg" src="pic1.jpg" class="image-fluid" />
+        </div>
+      </div>
+    </div> -->
+    <!-- My Work V2 -->
+    <div class="container-fluid padding">
+      <div class="row welcome text-center">
+        <div class="col-12">
+          <h1 class="display-5mm">My Work...</h1>
+        </div>
+        <hr class="my-3" />
+      </div>
+    </div>
+    <!-- Project cards -->
+    <div class="container-fluid padding">
+      <div class="row padding">
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top" src="SMD.png" />
+            <div class="card-body">
+              <h4 class="card-title">Android Application</h4>
+              <p class="card-text">
+                An application to help small scale businesses to maintain their
+                finances and vendor log.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top" src="SE.png" />
+            <div class="card-body">
+              <h4 class="card-title">Desktop Application</h4>
+              <p class="card-text">
+                An application for bus terminal managers to smoothly handle the
+                flow of terminal traffic.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top" src="DB.png" />
+            <div class="card-body">
+              <h4 class="card-title">Website</h4>
+              <p class="card-text">
+                A fully functional website for the customers of Pakistan Post
+                where they can track and book their parcels.
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4" />
+      </div>
+    </div>
+    <!-- Connect -->
+    <div class="container-fluid padding">
+      <div class="row text-center padding">
+        <div class="col-12 ">
+          <h2>Connect</h2>
+        </div>
+        <div class="col-12 social padding">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-snapchat"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <hr class="my-4" />
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <div class="continer-fluid padding">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <h5 class="light">Address</h5>
+            <hr class="light" />
+            <p>FAST NUCES Islamabad, Pakistan</p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="light">E-mail</h5>
+            <hr class="light" />
+            <p>abdurrehman_268@outlook.com</p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="light">Phone #</h5>
+            <hr class="light" />
+            <p>+92-335-8108622</p>
+          </div>
+          <div class="col-12">
+            <hr class="light-100" />
+            <h5>&copy; https://508ug.csb.app/#</h5>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
